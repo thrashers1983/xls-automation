@@ -1,8 +1,3 @@
-# basketball_star = 'michael jordan'
-# quote = f"{basketball_star.title()} says: nothing is impossible unless you didn't afford."
-# print(quote)
-
-
 # favorite_language = ' ruby\n\t'
 # print(favorite_language.rstrip())
 # print(favorite_language.lstrip())
@@ -26,6 +21,18 @@ lower_usernames = []
 for username in usernames:
     lower_usernames.append(username.lower())
 print(lower_usernames)
+
+peoples = ['yiping', 'xueyun', 'zhanghong']
+favorite = {
+    'yiping': 'python',
+    'xueyun': 'go',
+    'jc': 'swift',
+    }
+for people in peoples:
+    if people in favorite.keys():
+        print(f"thank you {people} for choosing {favorite[people]}")
+    else:
+        print(f"{people}, please complete the poll.")
 
 
 
