@@ -34,5 +34,3 @@ for people in peoples:
     else:
         print(f"{people}, please complete the poll.")
 
-
-
