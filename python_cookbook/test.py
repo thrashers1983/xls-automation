@@ -9,13 +9,13 @@
 # a.sort(key=lambda x: x[1])
 # print(a)
 
-import heapq
-
-zz = [1,2,3,4,5]
-heapq.heappush(zz, 567)
-print(zz)
-heapq.heappush(zz, 566)
-print(zz)
+# import heapq
+#
+# zz = [1,2,3,4,5]
+# heapq.heappush(zz, 567)
+# print(zz)
+# heapq.heappush(zz, 566)
+# print(zz)
 # heapq.heapify(zz)
 # heapq.heappush(zz, 89)
 # print(zz)
