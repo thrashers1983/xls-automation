@@ -22,13 +22,13 @@ print(expensive)
 heapq.heapify(nums)         # 把列表转换成堆
 print(nums)                 # 堆的第一个元素永远是堆里最小的(不知道堆的原理，以后再研究)
 print(heapq.heappop(nums))
-print(nums)
+print(nums)                 # 把堆的第一个元素pop掉以后，堆的第二小元素会填补0号位
 print(heapq.heappop(nums))
 print(nums)
 
 # The most important feature of a heap is that heap[0] is always the smallest item.
-# Moreover, subsequent items can be easily found using the heapq.heappop() method,
-# which pops off the first item and replaces it with the next smallest item.
+# Moreover, subsequent items can be easily found using the heapq.heappop() method, which pops off the
+# first item and replaces it with the next smallest item.
 
 # 使用场景：
 # 找一个集合的最大值最小值，用max()和min()

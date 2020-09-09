@@ -14,27 +14,27 @@ e = {
 }
 
 # 方法2：用defaultdict创建字典
-d = defaultdict(list)
-print(d)
-d['a'].append(1)
-d['a'].append(2)
-d['b'].append(4)
-print(d)
-print(d['a'])
-print(d['b'])
-print(d['c'])           # 读一个不存在的key，字典自动为这个key创建一个默认的value为空列表
-print(d)                # 这时候字典已经有了c这个key，对应的value是[]
+dl = defaultdict(list)
+print(dl)
+dl['a'].append(1)
+dl['a'].append(2)
+dl['b'].append(4)
+print(dl)
+print(dl['a'])
+print(dl['b'])
+print(dl['c'])           # 读一个不存在的key，字典自动为这个key创建一个默认的value为空列表
+print(dl)                # 这时候字典已经有了c这个key，对应的value是[]
 
-d = defaultdict(set)
-print(d)
-d['a'].add(1)
-d['a'].add(2)
-d['b'].add(4)
-print(d)
-print(d['a'])
-print(d['b'])
-print(d['c'])           # 读一个不存在的key，字典自动为这个key创建一个默认的value为空set
-print(d)                # 这时候字典已经有了c这个key，对应的value是set()
+ds = defaultdict(set)
+print(ds)
+ds['a'].add(1)
+ds['a'].add(2)
+ds['b'].add(4)
+print(ds)
+print(ds['a'])
+print(ds['b'])
+print(ds['c'])           # 读一个不存在的key，字典自动为这个key创建一个默认的value为空set
+print(ds)                # 这时候字典已经有了c这个key，对应的value是set()
 
 # 用defaultdict创建的字典，会自动为key创建默认的value(空列表，空set，空字符串)，普通字典需要手动给key分配value，
 # 下面这两个示例可以看出使用defaultdict的代码更加简洁

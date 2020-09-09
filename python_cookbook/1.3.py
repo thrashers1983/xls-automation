@@ -12,14 +12,19 @@ def search(lines, pattern, history=5):
 
 if __name__ == '__main__':
     with open('../data/cookbook_1.3') as f:
-        for line, prevlines in search(f, 'python', 5):
-            for pline in prevlines:
+        for line, prev_lines in search(f, 'python', 5):
+            for pline in prev_lines:
                 print(pline, end='')
             print('*'*10)
             print(line, end='')
             print('-' * 20)
+# 第一次外层for循环，开始执行search()，由于search()实际上是一个生成器，运行过程中碰到yield返回了line，previous_lines后
+# 就停下来了，接下来执行内层for循环，然后开始第二次外层for循环，同样由于search()是生成器的原因，他不会从头开始执行，而是从第
+# 一次停下来的地方，也就是yield后面那一行继续执行，直到再次碰到yield停下来，吐出两个对象，周而复始直到search()的for循环读完
+# lines里的内容，那这个生成器就结束了，生成器结束了就不再吐东西出来了，for line, prev_lines拿不到东西也就循环结束了
 
-q = deque(maxlen=3)     # 创建一个固定长度的队列
+q = deque(maxlen=3)     # 创建一个固定长度为3的空队列
+print(q)
 q.append(1)
 q.append(2)
 q.append(3)
@@ -28,8 +33,10 @@ q.append(4)
 print(q)
 q.append(5)
 print(q)
+for i in q:             # 队列也是可迭代对象
+    print(i)
 
-q = deque()             # 创建一个没有边界的队列
+q = deque()             # 创建一个没有边界的空队列
 q.append(1)
 q.append(2)
 q.append(3)
