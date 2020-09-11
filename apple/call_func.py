@@ -25,18 +25,20 @@ for i in statistics:
             + i['WS-C3560-12PC-S'] + i['WS-C3560-8PC-S'] + i['C2960']:
         print(i['store'])
 
-# statistics_sort = sorted(statistics, key=lambda s: s['C2960 ratio'], reverse=True)
-# 这个排序不成功，因为已经是百分比的形式了，排序出来不是理想的结果，如果原字典保持原来的float类型，排序完再转成百分比，不知能否实现？
+statistics_sort = sorted(statistics, key=lambda s: s['C2960 ratio'], reverse=True)
+
+for store in statistics_sort:
+    store['C2960 ratio'] = "{:.0%}".format(store['C2960 ratio'])
 
 with open('../data/test.csv', 'w+') as f:
     f_csv = csv.DictWriter(f, headers)
     f_csv.writeheader()
-    f_csv.writerows(statistics)
-#
-# # with open('../data/result', 'a') as file:
-# #     for store in statistics_sort:
-# #         file.write("{0:<8s}total: {1:<8d}3560: {2:<8d}2960: {3:<8d}2960 ratio: {4:.0%}\n"
-# #                    .format(store['store'], store['acc_total'], store['c3560'], store['c2960'], store['c2960_ratio']))
+    f_csv.writerows(statistics_sort)
+
+# with open('../data/result', 'a') as file:
+#     for store in statistics_sort:
+#         file.write("{0:<8s}total: {1:<8d}3560: {2:<8d}2960: {3:<8d}2960 ratio: {4:.0%}\n"
+#                    .format(store['store'], store['acc_total'], store['c3560'], store['c2960'], store['c2960_ratio']))
 
 # # 以下这段代码是输出core-sw/srv-sw/rsr-sw的统计
 # statistics = []

@@ -37,7 +37,7 @@ def acc_stat(store_no):
     store['WS-C3560-12PC-S'] = ws_c3560_12pc_s
     store['WS-C3560-8PC-S'] = ws_c3560_8pc_s
     store['C2960'] = c2960
-    store['C2960 ratio'] = "{:.0%}".format(ratio)
+    store['C2960 ratio'] = ratio
     return store
 
 
