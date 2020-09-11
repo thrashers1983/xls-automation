@@ -1,6 +1,6 @@
 # 把字符串赋给一个变量，可以用单引号，也可以用双引号
 new_message = 'this is master branch'
-news_2020 = "kiphony has now became yiping's girlfriend."
+news_2020 = "kiphony has now become yiping's girlfriend."
 print(new_message)
 print(news_2020)
 print()
@@ -70,6 +70,7 @@ print(add)
 print(mul)
 print(div)
 print(exp)
+print()
 # 对于很大的数字，可以用下划线分隔，这样容易阅读
 universe_age = 14_000_000_000
 print(universe_age)
@@ -81,4 +82,3 @@ print(y)
 print(z)
 # 如果一个变量的值永远不会变，建议用大写字母来定义，这不是强制的，只是约定俗成的习惯
 MAX_CONNECTIONS = 5000
-

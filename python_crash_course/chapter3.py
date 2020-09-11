@@ -23,7 +23,7 @@ yipings_girlfriends.append("girl4")
 yipings_girlfriends.append("kiphony the angel")
 print(yipings_girlfriends)
 # 往列表中插入元素
-family_members.insert(2,'manman')
+family_members.insert(2, 'manman')
 print(family_members)
 print()
 # 使用del通过序号删除元素
@@ -37,7 +37,7 @@ print(retail_stores)
 print(closed_store)
 closed_store = retail_stores.pop(0)
 print(closed_store)
-# 使用remove()通过值删除元素，remove()只删除第一次出现这个值的元素，如果同一个值在列表中出现多次，要用loop一个个删
+# 使用remove()通过值删除元素，remove()只删除第一次出现这个值的元素，如果同一个值在列表中出现多次，要用循环一个个删
 retail_stores.remove('r581')
 print(retail_stores)
 # 如果想保留remove()删掉的元素，则先把要删除的元素赋给一个变量
@@ -58,9 +58,11 @@ names = ['michael', 'derek', 'shawn', 'ben', 'joseph']
 print(sorted(names))
 print(sorted(names, reverse=True))
 print(names)
+print()
 # 使用reverse()对原列表反向排序，列表顺序永久改变
 names.reverse()
 print(names)
+print()
 # 使用len()计算列表长度
 names_len = len(names)
 print(names_len)
