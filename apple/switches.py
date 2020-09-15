@@ -72,9 +72,3 @@ def core_stat(store_no):
             fqdn, model = device.split(',')
             store[fqdn] = model
     return store
-
-
-
-
-
-
