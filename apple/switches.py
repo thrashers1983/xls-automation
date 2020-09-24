@@ -72,3 +72,27 @@ def core_stat(store_no):
             fqdn, model = device.split(',')
             store[fqdn] = model
     return store
+
+
+def ap_stat(store_no):
+    models = []
+    store = {}
+    store['store'] = store_no
+    store['total ap'] = 0
+    store['3602'] = 0
+    store['3702'] = 0
+    store['3802'] = 0
+    output = os.popen(f"capri accesspoints siteCode={store_no} state=DETECTED -f model | grep -v model | sort | uniq -c")
+    for line in output:
+        models.append(line.strip())
+    for model in models:
+        c, m = model.split(' ')
+        store['total ap'] += int(c)
+        if '3602' in m:
+            store['3602'] += int(c)
+        elif '3702' in m:
+            store['3702'] += int(c)
+        elif '3802' in m:
+            store['3802'] += int(c)
+
+    return store
