@@ -1,5 +1,6 @@
-# 这里把3个类都放在了一个模块中，也可以把Car放在一个单独的模块里，然后在这里import car模块，再创建Car的子类
+# 这里把3个类都放在了一个模块中，也可以把Car类放在一个单独的模块里，然后在这里import car模块，再创建Car类的子类
 """A set of classes used to represent cars, gas and electric cars."""
+
 
 class Car:
     """A simple attempt to represent a car."""
@@ -37,6 +38,7 @@ class Car:
         else:
             print("You can't roll back an odometer!")
 
+
 class Battery:
     """A simple attempt to model a battery for an electric car."""
 
@@ -51,10 +53,11 @@ class Battery:
     def get_range(self):
         """Print a statement about the range this battery provides."""
         if self.battery_size == 75:
-            range = 260
+            battery_range = 260
         elif self.battery_size == 100:
-            range = 315
-        print(f"This car can go about {range} miles on a full charge.")
+            battery_range = 315
+        print(f"This car can go about {battery_range} miles on a full charge.")
+
 
 class ElectricCar(Car):
     """Represent aspects of a car, specific to electric vehicles."""
