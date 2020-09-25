@@ -1,7 +1,7 @@
-# 我理解测试的目的，是写一个自动化脚本来执行针对函数或者类的不同方面的各个角度的测试，这样每次修改函数或者类的时候，
-# 就执行一次测试脚本就能知道改动有没有破坏其原来的功能，否则的话，每次改动后都要手动测试是非常浪费时间的，一个unit test
-# 用来确保一个函数的一个特定方面是工作正常的，一个test case是一系列unit test的集合，来保证函数整体工作正常，测试类也一样，
-# 一个unit test测试类的一个方法，一个test case测试整个类
+# 我理解测试的目的，是写一个自动化脚本来执行针对函数或者类的不同方面的各个角度的测试，这样每次修改函数或者类的时候，就执行一次测试脚本
+# 就能知道改动有没有破坏其原来的功能，否则的话，每次改动后都要手动测试是非常浪费时间的，一个unit test用来确保一个函数的一个特定方面
+# 是工作正常的，一个test case是一系列unit test的集合，来保证函数整体工作正常，测试类也一样，一个unit test测试类的一个方法，一个
+# test case测试整个类
 
 import unittest
 from chapter11_functions_classes import get_formatted_name
@@ -9,10 +9,10 @@ from chapter11_functions_classes import AnonymousSurvey
 
 
 # 测试函数
-class NamesTestCase(unittest.TestCase):             # 类名最好有待测试的函数名和Test
+class NamesTestCase(unittest.TestCase):         # 类名最好有待测试的函数名和Test
     """Tests for 'name_function.py'."""
 
-    def test_first_last_name(self):                 # 测试方法必须以test_开头，当运行当前脚本的时候，以test_开头的方法名会被自动执行
+    def test_first_last_name(self):         # 测试方法必须以test_开头，当运行当前脚本的时候，以test_开头的方法名会被自动执行
         """Do names like 'Janis Joplin' work?"""
         formatted_name = get_formatted_name('janis', 'joplin')
         self.assertEqual(formatted_name, 'Janis Joplin')
@@ -46,8 +46,8 @@ class TestAnonymousSurvey(unittest.TestCase):
             self.assertIn(response, my_survey.responses)
 
 
-# 上面这个测试类要在每个测试方法里都创建一个被测类的实例，有很多重复劳动，可以用setUp()方法一次性创建这些被测类的实例和属性，这些实例和属性在每一
-# 个测试方法里都可以被使用，python会先运行setUp()方法，再运行test_开头的方法
+# 上面这个测试类要在每个测试方法里都创建一个被测类的实例，有很多重复劳动，可以用setUp()方法一次性创建这些被测类的实例和属性，
+# 这些实例和属性在每一个测试方法里都可以被使用，python会先运行setUp()方法，再运行test_开头的方法
 class TestAnonymousSurvey(unittest.TestCase):
     """Tests for the class AnonymousSurvey."""
 

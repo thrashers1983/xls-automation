@@ -4,7 +4,7 @@ from switches import ap_stat
 import csv
 
 store_list = []
-with open('../data/apac_store_list') as f:
+with open('apac_store_list') as f:
     for line in f:
         store_number, *_ = line.split(':')
         store_list.append(store_number.lower())
