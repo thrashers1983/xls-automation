@@ -29,8 +29,9 @@ print(max(prices))
 print(min(prices.values()))     # 只比较value
 print(max(prices.values()))
 
-print(min(prices, key=lambda k: prices[k]))         # 比较value，返回结果对应的key
+print(min(prices, key=lambda k: prices[k]))
 print(max(prices, key=lambda k: prices[k]))
+# 对字典用min()，max()之类的函数，默认是比较字典的key，所以这里的lambda函数的参数是k是字典的key，比较value，返回结果对应的key
 
 min_value = prices[min(prices, key=lambda k: prices[k])]    # 根据key再得到对应的value
 
