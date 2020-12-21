@@ -16,6 +16,7 @@ portfolio = [
 
 cheap = heapq.nsmallest(3, portfolio, key=lambda s: s['price'])
 expensive = heapq.nlargest(3, portfolio, key=lambda s: s['price'])
+# 这个例子中lambda函数的参数是portfolio的每一个元素，也就是一个字典，返回值是字典的price键对应的值，根据price的值来比大小
 print(cheap)
 print(expensive)
 
@@ -26,9 +27,9 @@ print(nums)                 # 把堆的第一个元素pop掉以后，堆的第�
 print(heapq.heappop(nums))
 print(nums)
 
-# The most important feature of a heap is that heap[0] is always the smallest item.
-# Moreover, subsequent items can be easily found using the heapq.heappop() method, which pops off the
-# first item and replaces it with the next smallest item.
+# The most important feature of a heap is that heap[0] is always the smallest item. Moreover, subsequent items can be
+# easily found using the heapq.heappop() method, which pops off the first item and replaces it with the next smallest
+# item
 
 # 使用场景：
 # 找一个集合的最大值最小值，用max()和min()

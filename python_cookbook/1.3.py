@@ -18,10 +18,10 @@ if __name__ == '__main__':
             print('*'*10)
             print(line, end='')
             print('-' * 20)
-# 第一次外层for循环，开始执行search()，由于search()实际上是一个生成器，运行过程中碰到yield返回了line，previous_lines后
-# 就停下来了，接下来执行内层for循环，然后开始第二次外层for循环，同样由于search()是生成器的原因，他不会从头开始执行，而是从第
-# 一次停下来的地方，也就是yield后面那一行继续执行，直到再次碰到yield停下来，吐出两个对象，周而复始直到search()的for循环读完
-# lines里的内容，那这个生成器就结束了，生成器结束了就不再吐东西出来了，for line, prev_lines拿不到东西也就循环结束了
+# 第一次外层for循环，开始执行search()，由于search()实际上是一个生成器，运行过程中碰到yield返回了line，previous_lines后就停下来了，
+# 接下来执行内层for循环，然后开始第二次外层for循环，同样由于search()是生成器的原因，他不会从头开始执行，而是从第一次停下来的地方，也就是
+# yield后面那一行继续执行，直到再次碰到yield停下来，吐出两个对象，周而复始直到search()里的for循环读完lines里的内容，那这个生成器就结束了，
+# 生成器结束了就不再吐东西出来了，for line, prev_lines拿不到东西也就循环结束了
 
 q = deque(maxlen=3)     # 创建一个固定长度为3的空队列
 print(q)

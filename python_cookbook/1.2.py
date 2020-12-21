@@ -1,6 +1,8 @@
 # 1.2. Unpacking Elements from Iterables of Arbitrary Length
 user_record = ('Dave', 'dave@example.com', '773-555-1212', '847-555-1212')
-name, email, *phone_numbers = user_record       # 这里的phone_numbers变量总是一个列表，如果没有元素就是空列表
+name, email, *phone_numbers = user_record
+# *解包操作不能单独使用，如果写*phone_numbers = user_record程序会报错，可以这样写：*phone_numbers, = user_record
+# 这里的phone_numbers变量总是一个列表，如果没有元素就是空列表
 print(name, email, *phone_numbers, phone_numbers)
 
 *trailing, current = [10, 8, 7, 1, 9, 5, 10, 3]
