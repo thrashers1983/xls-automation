@@ -20,7 +20,7 @@ for word in morewords:
     word_counts[word] += 1
 print(word_counts)
 
-word_counts.update(morewords)
+word_counts.update(morewords)           # 用update()方法自动更新计数
 print(word_counts)
 
 # Counter实例支持数学运算符
