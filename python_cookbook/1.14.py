@@ -25,7 +25,3 @@ print(sorted(users, key=lambda u: (u.last_name, u.first_name)))
 # attrgetter()也可以用于min()，max()
 print(min(users, key=attrgetter('user_id')))
 print(max(users, key=attrgetter('user_id')))
-
-
-
-

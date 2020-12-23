@@ -44,7 +44,7 @@ print(zhang_hong)
 print(str(zhang_hong))
 print(repr(zhang_hong))
 # 从以上print输出结果看，print()和print(str())的输出结果一样，可见打印的时候，由于输出是给人看的，所以默认调用实例对象的
-# __str__()方法来描述对象
+# __str__()方法来描述对象，但是如果自定义函数只重构了__repr__()方法，那__str__()和__repr__()的输出是一样的
 
 q = PriorityQueue()         # 生成PriorityQueue的一个实例
 q.push(Item('foo'), 1)
