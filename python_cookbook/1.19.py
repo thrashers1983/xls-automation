@@ -37,4 +37,6 @@ print(min_shares)
 
 # 注：当把生成器表达式作为参数传给函数的时候，生成器表达式的()可以省略掉不写，以下两句话意思相同
 s = sum((x * x for x in nums))
+print(s)
 s = sum(x * x for x in nums)
+print(s)

@@ -22,6 +22,7 @@ c['z'] = 10
 c['w'] = 40
 del c['x']
 print(a)
+print(b)
 # del c['y']    这句话会报错，因为第一个字典没有这个键
 print()
 
