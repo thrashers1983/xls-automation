@@ -68,8 +68,11 @@ print(re.findall(r'(?:\d+)/(?:\d+)/(?:\d+)', text))
 for month, day, year in datepat.findall(text):
     print(f'{year}-{month}-{day}')
 
+print()
 # finditer()和findall()功能类似，不过返回的是一个迭代器
 print(datepat.finditer(text))
 
 for m in datepat.finditer(text):
+    print(m)        # 每次迭代，得到一个re.Match对象
+    print(m.group())
     print(m.groups())
