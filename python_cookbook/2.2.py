@@ -27,9 +27,13 @@ def read_data(name):
 
 
 url = 'http://h2020.myspecies.info'
-x = read_data(url)
-print(x)
+content = read_data(url)
+print(content)
 
-# 同样的功能也可以用正则表达式来实现
+# 同样的功能也可以用切片来实现，但是不优雅
+url = 'http://www.python.org'
+print(url[:5] == 'http:' or url[:6] == 'https:' or url[:4] == 'ftp:')
+
+# 同样的功能还可以用正则表达式来实现
 url = 'http://www.python.org'
 print(re.match('http:|https:|ftp:', url))
